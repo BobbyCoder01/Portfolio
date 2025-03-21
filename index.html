@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bobby Singh | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a192f;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 10px;
+            padding: 10px 0;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #64ffda;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+        /* Animated Client Stats */
+        .client-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .stat-item {
+            background: #112240;
+            padding: 15px;
+            border-radius: 10px;
+            width: 180px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 1.2rem;
+        }
+        .stat-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.5);
+        }
+        /* Projects */
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .project-item {
+            background: #112240;
+            padding: 15px;
+            border-radius: 10px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+            transition: transform 0.3s;
+        }
+        .project-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .project-item:hover {
+            transform: scale(1.1);
+        }
+        /* Services & Tech Stack */
+        .services, .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .service, .tech {
+            background: #112240;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+            transition: transform 0.3s;
+            font-size: 1rem;
+        }
+        .service:hover, .tech:hover {
+            transform: scale(1.1);
+        }
+        /* Get in Touch Buttons */
+        .contact {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .contact a {
+            background: #64ffda;
+            color: #0a192f;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(100, 255, 218, 0.3);
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+        .contact a:hover {
+            transform: translateY(-3px);
+            background: white;
+            box-shadow: 0 6px 15px rgba(100, 255, 218, 0.5);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .project-item {
+            background: #112240;
+            padding: 15px;
+            border-radius: 10px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .project-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .project-item:hover {
+            transform: scale(1.1);
+        }
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <img src="./profile.jpg" alt="Bobby Singh" class="profile-img">
+            <h1>Bobby Singh</h1>
+            <p>Freelance Website Developer | UI/UX Specialist</p>
+        </div>
+
+        <h2 class="section-title">Services</h2>
+        <div class="services">
+            <div class="service">Website Development</div>
+            <div class="service">WordPress Development</div>
+            <div class="service">Shopify Development</div>
+            <div class="service">E-commerce Development</div>
+        </div>
+
+        <h2 class="section-title">Tech Stack</h2>
+        <div class="tech-stack">
+            <div class="tech">HTML</div>
+            <div class="tech">CSS</div>
+            <div class="tech">JavaScript</div>
+            <div class="tech">React</div>
+            <div class="tech">WordPress</div>
+            <div class="tech">Shopify</div>
+        </div>
+
+        <h2 class="section-title">Client Stats</h2>
+        <div class="client-stats">
+            <div class="stat-item"><h2>200+</h2><p>Completed Projects</p></div>
+            <div class="stat-item"><h2>150+</h2><p>Happy Clients</p></div>
+            <div class="stat-item"><h2>3+</h2><p>Years Experience</p></div>
+            <div class="stat-item"><h2>100%</h2><p>Client Satisfaction</p></div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects">
+                <div class="project-item" onclick="openModal('./work/heavenlytouchcleaningservices-2025-03-21-14_31_37.png')">
+                    <img src="./work/heavenlytouchcleaningservices-2025-03-21-14_31_37.png">
+                </div>
+                <div class="project-item" onclick="openModal('./work/screencapture-demos-codezeel-prestashop-PRS21-PRS210502-en-2024-02-26-10_39_37 (1).png')">
+                    <img src="./work/screencapture-demos-codezeel-prestashop-PRS21-PRS210502-en-2024-02-26-10_39_37 (1).png">
+                </div>
+                <div class="project-item" onclick="openModal('./work/screencapture-demo80-leotheme-prestashop-leo-medilazar-elementor-demo-en-home-4-html-2024-02-26-10_46_33 (1).png')">
+                    <img src="./work/screencapture-demo80-leotheme-prestashop-leo-medilazar-elementor-demo-en-home-4-html-2024-02-26-10_46_33 (1).png">
+                </div>
+                <div class="project-item" onclick="openModal('./work/screencapture-bstore-12-myshopify-2023-12-13-09_17_21 (1).png')">
+                    <img src="./work/screencapture-bstore-12-myshopify-2023-12-13-09_17_21 (1).png">
+                </div>
+                <div class="project-item" onclick="openModal('./work/screencapture-example-elevencoder-2024-01-01-18_42_46 (1).png')">
+                    <img src="./work/screencapture-example-elevencoder-2024-01-01-18_42_46 (1).png">
+                </div>
+              
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+    
+        <script>
+            function openModal(imageSrc) {
+                document.getElementById("imageModal").style.display = "flex";
+                document.getElementById("modalImage").src = imageSrc;
+            }
+            function closeModal() {
+                document.getElementById("imageModal").style.display = "none";
+            }
+        </script>
+
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact">
+            <a href="mailto:bobbycoder01@gmail.com">Email Me</a>
+            <a href="https://www.linkedin.com/in/bobbycoder01/">LinkedIn</a>
+            <a href="https://github.com/BobbyCoder01">GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
